@@ -37,14 +37,14 @@ const HowItWorks = () => {
           {steps.map((step, index) => (
             <div key={index} className="text-center group">
               <div className="relative mb-6">
-                <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-20 h-20 bg-[#9b87f5] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <Icon
                     name={step.icon as any}
                     size={32}
                     className="text-white"
                   />
                 </div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-sm font-bold">
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#9b87f5] rounded-full flex items-center justify-center text-sm font-bold">
                   {index + 1}
                 </div>
               </div>

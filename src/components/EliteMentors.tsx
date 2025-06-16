@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 
-const MentorsGallery = () => {
+const EliteMentors = () => {
   const [activeCategory, setActiveCategory] = useState("all");
 
   const categories = [
@@ -80,7 +80,7 @@ const MentorsGallery = () => {
     <section className="bg-black text-white py-16 px-6">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 font-montserrat">
-          Наши менторы
+          Элитные менторы
         </h2>
 
         <div className="flex flex-wrap justify-center gap-3 mb-12">
@@ -90,7 +90,7 @@ const MentorsGallery = () => {
               onClick={() => setActiveCategory(category.id)}
               className={`flex items-center space-x-2 px-4 py-2 rounded-full transition-all ${
                 activeCategory === category.id
-                  ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white"
+                  ? "bg-[#9b87f5] text-white"
                   : "bg-gray-800 hover:bg-gray-700 text-gray-300"
               }`}
             >
@@ -104,7 +104,7 @@ const MentorsGallery = () => {
           {filteredMentors.map((mentor, index) => (
             <div
               key={index}
-              className="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-purple-500 transition-all group"
+              className="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-[#9b87f5] transition-all group"
             >
               <div className="flex items-center space-x-4 mb-4">
                 <img
@@ -114,7 +114,7 @@ const MentorsGallery = () => {
                 />
                 <div>
                   <h3 className="font-bold text-lg">{mentor.name}</h3>
-                  <p className="text-purple-400">{mentor.role}</p>
+                  <p className="text-[#9b87f5]">{mentor.role}</p>
                   <p className="text-sm text-gray-400">{mentor.experience}</p>
                 </div>
               </div>
@@ -123,7 +123,7 @@ const MentorsGallery = () => {
                 <Icon
                   name="ArrowRight"
                   size={16}
-                  className="inline mr-2 text-purple-400"
+                  className="inline mr-2 text-[#9b87f5]"
                 />
                 {mentor.specialization}
               </p>
@@ -131,7 +131,7 @@ const MentorsGallery = () => {
               <Button
                 size="sm"
                 variant="outline"
-                className="w-full border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white group-hover:bg-purple-500 group-hover:text-white"
+                className="w-full border-[#9b87f5] text-[#9b87f5] hover:bg-[#9b87f5] hover:text-white group-hover:bg-[#9b87f5] group-hover:text-white"
               >
                 Связаться
               </Button>
@@ -143,7 +143,7 @@ const MentorsGallery = () => {
           <Button
             size="lg"
             variant="outline"
-            className="border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white"
+            className="border-[#9b87f5] text-[#9b87f5] hover:bg-[#9b87f5] hover:text-white"
           >
             Показать всех менторов
             <Icon name="ArrowRight" size={20} className="ml-2" />
@@ -154,4 +154,4 @@ const MentorsGallery = () => {
   );
 };
 
-export default MentorsGallery;
+export default EliteMentors;

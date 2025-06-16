@@ -16,7 +16,7 @@ const Footer = () => {
 
           <Button
             size="lg"
-            className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 px-8 py-4 text-lg mb-8"
+            className="bg-[#9b87f5] hover:bg-[#8b77e5] px-8 py-4 text-lg mb-8"
           >
             <Icon name="Calendar" size={20} className="mr-2" />
             Записаться на бесплатную консультацию
@@ -25,7 +25,7 @@ const Footer = () => {
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-[#9b87f5] rounded-full flex items-center justify-center mx-auto mb-4">
               <Icon name="MessageCircle" size={24} className="text-white" />
             </div>
             <h3 className="font-bold mb-2">Telegram-чат</h3>
@@ -35,14 +35,14 @@ const Footer = () => {
             <Button
               variant="outline"
               size="sm"
-              className="border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white"
+              className="border-[#9b87f5] text-[#9b87f5] hover:bg-[#9b87f5] hover:text-white"
             >
               Присоединиться
             </Button>
           </div>
 
           <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-[#9b87f5] rounded-full flex items-center justify-center mx-auto mb-4">
               <Icon name="Users" size={24} className="text-white" />
             </div>
             <h3 className="font-bold mb-2">HR-канал</h3>
@@ -52,14 +52,14 @@ const Footer = () => {
             <Button
               variant="outline"
               size="sm"
-              className="border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white"
+              className="border-[#9b87f5] text-[#9b87f5] hover:bg-[#9b87f5] hover:text-white"
             >
               Подписаться
             </Button>
           </div>
 
           <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-[#9b87f5] rounded-full flex items-center justify-center mx-auto mb-4">
               <Icon name="Phone" size={24} className="text-white" />
             </div>
             <h3 className="font-bold mb-2">Поддержка</h3>
@@ -69,7 +69,7 @@ const Footer = () => {
             <Button
               variant="outline"
               size="sm"
-              className="border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white"
+              className="border-[#9b87f5] text-[#9b87f5] hover:bg-[#9b87f5] hover:text-white"
             >
               Написать
             </Button>
@@ -78,7 +78,7 @@ const Footer = () => {
 
         <div className="text-center border-t border-gray-800 pt-8">
           <div className="flex items-center justify-center space-x-3 mb-4">
-            <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-[#9b87f5] rounded-lg flex items-center justify-center">
               <Icon name="Code" size={16} className="text-white" />
             </div>
             <span className="text-xl font-bold font-montserrat">

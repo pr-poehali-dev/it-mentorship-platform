@@ -1,7 +1,8 @@
 import Header from "@/components/Header";
 import HowItWorks from "@/components/HowItWorks";
 import MentorshipDirections from "@/components/MentorshipDirections";
-import MentorsGallery from "@/components/MentorsGallery";
+import MentorDirectory from "@/components/MentorDirectory";
+import EliteMentors from "@/components/EliteMentors";
 import HRPartners from "@/components/HRPartners";
 import Footer from "@/components/Footer";
 
@@ -11,7 +12,8 @@ const Index = () => {
       <Header />
       <HowItWorks />
       <MentorshipDirections />
-      <MentorsGallery />
+      <MentorDirectory />
+      <EliteMentors />
       <HRPartners />
       <Footer />
     </div>

@@ -63,7 +63,7 @@ const MentorshipDirections = () => {
                   onClick={() => setActiveTab(index)}
                   className={`w-full text-left p-4 rounded-lg transition-all ${
                     activeTab === index
-                      ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white"
+                      ? "bg-[#9b87f5] text-white"
                       : "bg-gray-800 hover:bg-gray-700 text-gray-300"
                   }`}
                 >
@@ -82,7 +82,7 @@ const MentorshipDirections = () => {
           <div className="md:w-2/3">
             <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-[#9b87f5] rounded-lg flex items-center justify-center">
                   <Icon
                     name={directions[activeTab].icon as any}
                     size={24}
@@ -93,7 +93,7 @@ const MentorshipDirections = () => {
                   <h3 className="text-2xl font-bold font-montserrat">
                     {directions[activeTab].title}
                   </h3>
-                  <p className="text-purple-400">
+                  <p className="text-[#9b87f5]">
                     {directions[activeTab].subtitle}
                   </p>
                 </div>
@@ -103,8 +103,8 @@ const MentorshipDirections = () => {
                 {directions[activeTab].description}
               </p>
 
-              <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg p-4 mb-6">
-                <p className="text-purple-300 font-semibold">
+              <div className="bg-[#9b87f5]/20 rounded-lg p-4 mb-6">
+                <p className="text-[#9b87f5] font-semibold">
                   📈 Пример успеха: {directions[activeTab].example}
                 </p>
               </div>
@@ -118,7 +118,7 @@ const MentorshipDirections = () => {
                 ))}
               </div>
 
-              <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600">
+              <Button className="bg-[#9b87f5] hover:bg-[#8b77e5]">
                 Выбрать направление
               </Button>
             </div>
