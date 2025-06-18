@@ -12,7 +12,7 @@ const Header = () => {
               alt="IT-PRAGMAT"
               className="w-10 h-10 object-contain"
             />
-            <h1 className="text-2xl font-bold font-montserrat">IT прогмат</h1>
+            <h1 className="text-2xl font-bold font-montserrat">IT прагмат</h1>
           </div>
         </div>
 

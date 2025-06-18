@@ -82,11 +82,11 @@ const Footer = () => {
               <Icon name="Code" size={16} className="text-white" />
             </div>
             <span className="text-xl font-bold font-montserrat">
-              IT прогмат
+              IT прагмат
             </span>
           </div>
           <p className="text-gray-400 text-sm">
-            © 2024 IT прогмат. Твой путь к успешной IT-карьере.
+            © 2024 IT прагмат. Твой путь к успешной IT-карьере.
           </p>
         </div>
       </div>
