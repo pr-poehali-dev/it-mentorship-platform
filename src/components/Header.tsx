@@ -21,7 +21,7 @@ const Header = () => {
             Найди ментора, прокачай навыки
           </h2>
           <p className="text-xl md:text-2xl text-gray-300 mb-8">
-            Получи оффер с прибавкой
+            Получи оффер с прибавкой или войди в IT
           </p>
 
           <div className="flex flex-col md:flex-row gap-4 justify-center">
