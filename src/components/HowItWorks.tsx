@@ -44,9 +44,6 @@ const HowItWorks = () => {
                     className="text-white"
                   />
                 </div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#9b87f5] rounded-full flex items-center justify-center text-sm font-bold">
-                  {index + 1}
-                </div>
               </div>
               <h3 className="text-xl font-bold mb-3 font-montserrat">
                 {step.title}
