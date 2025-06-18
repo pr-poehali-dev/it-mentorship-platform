@@ -28,6 +28,12 @@ const Header = () => {
             <Button
               size="lg"
               className="bg-[#9b87f5] hover:bg-[#8b77e5] text-white px-8 py-4 text-lg"
+              onClick={() =>
+                window.open(
+                  "https://docs.google.com/forms/d/e/1FAIpQLScSqsQ08dkx3cdCiMbnkwExRM78c94cd8bhgrWKHmRkb03leQ/viewform?usp=header",
+                  "_blank",
+                )
+              }
             >
               <Icon name="Search" size={20} className="mr-2" />
               Найти ментора
