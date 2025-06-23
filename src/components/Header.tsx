@@ -30,7 +30,7 @@ const Header = () => {
               className="bg-[#9b87f5] hover:bg-[#8b77e5] text-white px-8 py-4 text-lg"
               onClick={() =>
                 window.open(
-                  "https://docs.google.com/forms/d/e/1FAIpQLScSqsQ08dkx3cdCiMbnkwExRM78c94cd8bhgrWKHmRkb03leQ/viewform?usp=header",
+                  "https://docs.google.com/forms/d/e/1FAIpQLScSqsQ08dkx3cdCiMbnkwExRM78c94cd8bhgrWKHmRkb03leQ/viewform?usp=pp_url&entry.1234567890=IT%20прагмат",
                   "_blank",
                 )
               }
