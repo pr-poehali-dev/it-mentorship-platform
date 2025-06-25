@@ -2,154 +2,185 @@ import Icon from "@/components/ui/icon";
 
 const ProcessFlowchart = () => {
   const blocks = [
-    // Верхний ряд - Работа с резюме
-    {
-      id: "resume-analysis",
-      title: "Анализ резюме",
-      category: "resume",
-      position: { x: 20, y: 10 },
-      icon: "FileText",
-    },
-    {
-      id: "resume-improvement",
-      title: "Улучшение резюме",
-      category: "resume",
-      position: { x: 45, y: 10 },
-      icon: "Edit",
-    },
-    {
-      id: "hr-attract",
-      title: "Привлекат ельность для HR",
-      category: "success",
-      position: { x: 70, y: 10 },
-      icon: "Target",
-    },
-
-    // Средний ряд - Основной процесс
+    // Старт
     {
       id: "start-consultation",
-      title: "Старт консультации",
+      title: "Старт консультаций",
       category: "start",
-      position: { x: 5, y: 35 },
+      position: { x: 8, y: 45 },
       icon: "Play",
     },
+
+    // Группа: Результативные консультации (синяя рамка)
     {
       id: "first-meeting",
       title: "Первая встреча",
       category: "consultation",
-      position: { x: 20, y: 35 },
+      position: { x: 22, y: 38 },
       icon: "Users",
     },
     {
       id: "weakness-analysis",
       title: "Анализ слабых сторон",
       category: "consultation",
-      position: { x: 35, y: 35 },
+      position: { x: 38, y: 38 },
       icon: "Search",
     },
     {
       id: "individual-plan",
-      title: "Индивид уальный план развития",
+      title: "Индивидуальный план развития",
       category: "development",
-      position: { x: 20, y: 50 },
+      position: { x: 54, y: 25 },
       icon: "BookOpen",
     },
     {
       id: "skill-recommendations",
       title: "Рекомендации по развитию навыков",
       category: "development",
-      position: { x: 45, y: 50 },
+      position: { x: 70, y: 25 },
       icon: "TrendingUp",
     },
     {
       id: "repeat-consultation",
       title: "Повторная консультация",
       category: "consultation",
-      position: { x: 70, y: 50 },
+      position: { x: 80, y: 45 },
       icon: "RotateCcw",
     },
 
-    // Нижний ряд - Подготовка к собеседованиям
+    // Группа: Работа с резюме (бирюзовая рамка)
+    {
+      id: "resume-analysis",
+      title: "Анализ резюме",
+      category: "resume",
+      position: { x: 74, y: 12 },
+      icon: "FileText",
+    },
+    {
+      id: "resume-improvement",
+      title: "Улучшение резюме",
+      category: "resume",
+      position: { x: 86, y: 12 },
+      icon: "Edit",
+    },
+    {
+      id: "hr-attract",
+      title: "Привлекательность для HR",
+      category: "success",
+      position: { x: 94, y: 18 },
+      icon: "Target",
+    },
+
+    // Группа: Подготовка к собеседованиям (фиолетовая рамка)
     {
       id: "mock-interviews",
       title: "Проведение mock-интервью",
       category: "interview",
-      position: { x: 20, y: 70 },
+      position: { x: 74, y: 38 },
       icon: "MessageCircle",
     },
     {
       id: "feedback-analysis",
       title: "Разбор отзывов",
       category: "interview",
-      position: { x: 45, y: 70 },
+      position: { x: 84, y: 32 },
       icon: "MessageSquare",
     },
     {
       id: "stress-testing",
       title: "Стресс-тестирование",
       category: "interview",
-      position: { x: 70, y: 70 },
+      position: { x: 90, y: 38 },
       icon: "Zap",
     },
     {
       id: "interview-feedback",
       title: "Фидбек по интервью",
       category: "success",
-      position: { x: 90, y: 70 },
+      position: { x: 94, y: 45 },
       icon: "CheckCircle",
     },
 
-    // Поиск вакансий
+    // Группа: Поиск вакансий (красная рамка)
     {
       id: "job-search",
       title: "Поиск подходящих вакансий",
       category: "job-search",
-      position: { x: 5, y: 85 },
+      position: { x: 8, y: 72 },
       icon: "Search",
     },
     {
       id: "application-help",
       title: "Помощь с откликами",
       category: "job-search",
-      position: { x: 25, y: 85 },
+      position: { x: 22, y: 72 },
       icon: "Send",
     },
 
-    // Финальный результат
+    // Финальный результат (зелёный овал)
     {
       id: "job-readiness",
-      title: "Готовность к трудоус тройству",
+      title: "Готовность к трудоустройству",
       category: "final",
-      position: { x: 60, y: 90 },
+      position: { x: 60, y: 80 },
       icon: "Award",
     },
   ];
 
   const connections = [
-    // Верхний поток резюме
+    // Основной поток от старта
+    { from: "start-consultation", to: "first-meeting" },
+    { from: "first-meeting", to: "weakness-analysis" },
+
+    // Развитие навыков
+    { from: "weakness-analysis", to: "individual-plan" },
+    { from: "individual-plan", to: "skill-recommendations" },
+
+    // Циклическая консультация
+    { from: "skill-recommendations", to: "repeat-consultation", curved: true },
+    { from: "repeat-consultation", to: "weakness-analysis", curved: true },
+
+    // Работа с резюме
+    { from: "skill-recommendations", to: "resume-analysis" },
     { from: "resume-analysis", to: "resume-improvement" },
     { from: "resume-improvement", to: "hr-attract" },
 
-    // Основной поток
-    { from: "start-consultation", to: "first-meeting" },
-    { from: "first-meeting", to: "weakness-analysis" },
-    { from: "weakness-analysis", to: "individual-plan" },
-    { from: "individual-plan", to: "skill-recommendations" },
-    { from: "skill-recommendations", to: "repeat-consultation" },
-
-    // Поток интервью
+    // Подготовка к интервью
     { from: "repeat-consultation", to: "mock-interviews" },
     { from: "mock-interviews", to: "feedback-analysis" },
     { from: "feedback-analysis", to: "stress-testing" },
     { from: "stress-testing", to: "interview-feedback" },
 
-    // Поток поиска работы
+    // Поиск работы
     { from: "start-consultation", to: "job-search" },
     { from: "job-search", to: "application-help" },
 
-    // К финальному результату
+    // Финальные соединения
     { from: "application-help", to: "job-readiness" },
     { from: "interview-feedback", to: "job-readiness" },
+  ];
+
+  const groups = [
+    {
+      title: "РЕЗУЛЬТАТИВНЫЕ КОНСУЛЬТАЦИИ",
+      color: "border-blue-400",
+      position: { x: 16, y: 20, width: 70, height: 40 },
+    },
+    {
+      title: "РАБОТА С РЕЗЮМЕ",
+      color: "border-cyan-400",
+      position: { x: 70, y: 8, width: 28, height: 15 },
+    },
+    {
+      title: "ПОДГОТОВКА К СОБЕСЕДОВАНИЯМ",
+      color: "border-purple-400",
+      position: { x: 70, y: 28, width: 28, height: 20 },
+    },
+    {
+      title: "ПОИСК ВАКАНСИЙ",
+      color: "border-red-400",
+      position: { x: 4, y: 66, width: 25, height: 12 },
+    },
   ];
 
   const getCategoryColor = (category: string) => {
@@ -186,7 +217,25 @@ const ProcessFlowchart = () => {
           трудоустройства
         </p>
 
-        <div className="relative bg-gray-900 rounded-2xl p-8 min-h-[600px] overflow-hidden">
+        <div className="relative bg-gray-900 rounded-2xl p-8 min-h-[700px] overflow-hidden">
+          {/* Группы блоков */}
+          {groups.map((group, index) => (
+            <div
+              key={index}
+              className={`absolute border-2 rounded-lg ${group.color} bg-black/20`}
+              style={{
+                left: `${group.position.x}%`,
+                top: `${group.position.y}%`,
+                width: `${group.position.width}%`,
+                height: `${group.position.height}%`,
+              }}
+            >
+              <div className="absolute -top-3 left-2 bg-gray-900 px-2 text-xs font-semibold text-gray-300">
+                📋 {group.title}
+              </div>
+            </div>
+          ))}
+
           {/* SVG для соединительных линий */}
           <svg
             className="absolute inset-0 w-full h-full pointer-events-none"
@@ -197,10 +246,27 @@ const ProcessFlowchart = () => {
               const toBlock = blocks.find((b) => b.id === connection.to);
               if (!fromBlock || !toBlock) return null;
 
-              const fromX = (fromBlock.position.x / 100) * 100 + 6;
-              const fromY = (fromBlock.position.y / 100) * 100 + 3;
-              const toX = (toBlock.position.x / 100) * 100 + 6;
-              const toY = (toBlock.position.y / 100) * 100 + 3;
+              const fromX = fromBlock.position.x;
+              const fromY = fromBlock.position.y;
+              const toX = toBlock.position.x;
+              const toY = toBlock.position.y;
+
+              if (connection.curved) {
+                // Изогнутая линия для циклических связей
+                const midX = (fromX + toX) / 2;
+                const midY = Math.min(fromY, toY) - 8;
+
+                return (
+                  <path
+                    key={index}
+                    d={`M ${fromX}% ${fromY}% Q ${midX}% ${midY}% ${toX}% ${toY}%`}
+                    stroke="#6b7280"
+                    strokeWidth="2"
+                    fill="none"
+                    markerEnd="url(#arrowhead)"
+                  />
+                );
+              }
 
               return (
                 <line
@@ -209,7 +275,7 @@ const ProcessFlowchart = () => {
                   y1={`${fromY}%`}
                   x2={`${toX}%`}
                   y2={`${toY}%`}
-                  stroke="#4b5563"
+                  stroke="#6b7280"
                   strokeWidth="2"
                   markerEnd="url(#arrowhead)"
                 />
@@ -226,7 +292,7 @@ const ProcessFlowchart = () => {
                 refY="3.5"
                 orient="auto"
               >
-                <polygon points="0 0, 10 3.5, 0 7" fill="#4b5563" />
+                <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280" />
               </marker>
             </defs>
           </svg>
@@ -236,7 +302,11 @@ const ProcessFlowchart = () => {
             {blocks.map((block) => (
               <div
                 key={block.id}
-                className={`absolute transform -translate-x-1/2 -translate-y-1/2 ${getCategoryColor(block.category)} rounded-lg p-4 text-white text-sm font-medium shadow-lg hover:scale-105 transition-transform cursor-pointer max-w-[140px] text-center`}
+                className={`absolute transform -translate-x-1/2 -translate-y-1/2 ${getCategoryColor(block.category)} ${
+                  block.category === "final"
+                    ? "rounded-full px-6 py-4"
+                    : "rounded-lg p-3"
+                } text-white text-sm font-medium shadow-lg hover:scale-105 transition-transform cursor-pointer max-w-[160px] text-center`}
                 style={{
                   left: `${block.position.x}%`,
                   top: `${block.position.y}%`,
@@ -245,10 +315,12 @@ const ProcessFlowchart = () => {
                 <div className="flex flex-col items-center gap-2">
                   <Icon
                     name={block.icon as any}
-                    size={20}
+                    size={18}
                     className="text-white"
                   />
-                  <span className="text-xs leading-tight">{block.title}</span>
+                  <span className="text-xs leading-tight font-medium">
+                    {block.title}
+                  </span>
                 </div>
               </div>
             ))}
@@ -256,26 +328,28 @@ const ProcessFlowchart = () => {
 
           {/* Легенда */}
           <div
-            className="absolute bottom-4 left-4 bg-gray-800 rounded-lg p-4"
+            className="absolute bottom-4 left-4 bg-gray-800 rounded-lg p-4 border border-gray-700"
             style={{ zIndex: 3 }}
           >
-            <h4 className="text-sm font-semibold mb-2">Этапы процесса:</h4>
+            <h4 className="text-sm font-semibold mb-3 text-white">
+              Этапы процесса:
+            </h4>
             <div className="grid grid-cols-2 gap-2 text-xs">
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-blue-600 rounded"></div>
-                <span>Консультации</span>
+                <div className="w-3 h-3 bg-blue-500 rounded"></div>
+                <span className="text-gray-300">Консультации</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-yellow-600 rounded"></div>
-                <span>Развитие</span>
+                <span className="text-gray-300">Развитие</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-purple-600 rounded"></div>
-                <span>Интервью</span>
+                <span className="text-gray-300">Интервью</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-green-600 rounded"></div>
-                <span>Результат</span>
+                <span className="text-gray-300">Результат</span>
               </div>
             </div>
           </div>
