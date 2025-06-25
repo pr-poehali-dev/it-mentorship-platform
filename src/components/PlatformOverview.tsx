@@ -130,7 +130,7 @@ const PlatformOverview = () => {
               size={32}
               className="text-blue-400 mx-auto mb-4"
             />
-            <h4 className="text-lg font-semibold mb-2">500+ менторов</h4>
+            <h4 className="text-lg font-semibold mb-2">20 менторов</h4>
             <p className="text-gray-400 text-sm">
               Опытные специалисты из топовых компаний
             </p>
@@ -142,7 +142,7 @@ const PlatformOverview = () => {
               size={32}
               className="text-green-400 mx-auto mb-4"
             />
-            <h4 className="text-lg font-semibold mb-2">85% успеха</h4>
+            <h4 className="text-lg font-semibold mb-2">100% успеха</h4>
             <p className="text-gray-400 text-sm">
               Менти успешно трудоустраиваются
             </p>
