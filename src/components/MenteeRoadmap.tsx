@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const HowItWorks = () => {
+const MenteeRoadmap = () => {
   const [activeStep, setActiveStep] = useState(0);
 
   const roadmapSteps = [
@@ -58,7 +58,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="bg-black text-white py-20 px-6 overflow-hidden">
+    <section className="bg-gray-950 text-white py-20 px-6 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent">
@@ -176,4 +176,4 @@ const HowItWorks = () => {
   );
 };
 
-export default HowItWorks;
+export default MenteeRoadmap;

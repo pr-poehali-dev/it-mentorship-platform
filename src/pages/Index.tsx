@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
-import HowItWorks from "@/components/HowItWorks";
+import PlatformOverview from "@/components/PlatformOverview";
+import MenteeRoadmap from "@/components/MenteeRoadmap";
 import MentorshipDirections from "@/components/MentorshipDirections";
 import MentorDirectory from "@/components/MentorDirectory";
 import EliteMentors from "@/components/EliteMentors";
@@ -10,7 +11,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-black">
       <Header />
-      <HowItWorks />
+      <PlatformOverview />
+      <MenteeRoadmap />
       <MentorshipDirections />
       <MentorDirectory />
       <EliteMentors />
