@@ -70,13 +70,8 @@ const PlatformOverview = () => {
             >
               {/* Background Glow Effect */}
               <div
-                className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl`}
+                className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
               ></div>
-
-              {/* Step Number */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-white text-black text-sm font-bold flex items-center justify-center z-10">
-                {index + 1}
-              </div>
 
               {/* Icon */}
               <div
