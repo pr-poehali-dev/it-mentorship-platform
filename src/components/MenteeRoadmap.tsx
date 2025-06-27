@@ -69,88 +69,67 @@ const MenteeRoadmap = () => {
           </p>
         </div>
 
-        {/* Progress Line */}
-        <div className="relative mb-12">
-          <div className="absolute top-1/2 left-8 right-8 h-1 bg-gray-800 -translate-y-1/2 z-0"></div>
-          <div
-            className="absolute top-1/2 left-8 h-1 bg-gradient-to-r from-blue-500 to-purple-500 -translate-y-1/2 z-10 transition-all duration-1000"
-            style={{
-              width: `${(activeStep / (roadmapSteps.length - 1)) * (100 - 6.25)}%`,
-            }}
-          ></div>
-        </div>
-
         {/* Steps */}
-        <div className="grid gap-8 md:gap-4">
+        <div className="space-y-8">
           {roadmapSteps.map((step, index) => (
             <div
               key={index}
-              className={`relative cursor-pointer transition-all duration-500 ${
-                index <= activeStep ? "opacity-100" : "opacity-50"
+              className={`group cursor-pointer transition-all duration-500 hover:scale-[1.02] ${
+                index <= activeStep ? "opacity-100" : "opacity-70"
               }`}
               onMouseEnter={() => setActiveStep(index)}
             >
-              <div className="flex items-start gap-6 md:gap-8">
-                {/* Step Number & Icon */}
-                <div className="flex-shrink-0 relative">
-                  <div
-                    className={`w-16 h-16 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center relative z-10 transform transition-all duration-300 ${
-                      index === activeStep
-                        ? "scale-110 shadow-2xl"
-                        : "scale-100"
-                    }`}
-                  >
-                    <Icon
-                      name={step.icon as any}
-                      size={24}
-                      className="text-white"
-                    />
-                  </div>
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white opacity-0 animate-ping"></div>
-                  <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-white text-black text-xs font-bold flex items-center justify-center">
-                    {index + 1}
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="flex-1 pt-2">
-                  <div
-                    className={`transform transition-all duration-300 ${
-                      index === activeStep ? "translate-x-0" : "translate-x-2"
-                    }`}
-                  >
-                    <h3 className="text-xl md:text-2xl font-bold mb-2 text-white">
-                      {step.title}
-                    </h3>
-                    <p className="text-gray-300 mb-2 text-base md:text-lg">
-                      {step.description}
-                    </p>
-                    <p
-                      className={`text-sm text-gray-400 transition-all duration-300 ${
+              <div className="w-full bg-gradient-to-r from-gray-900/50 to-gray-800/30 rounded-2xl p-8 border border-gray-700/50 backdrop-blur-sm hover:border-purple-500/30 transition-all duration-300">
+                <div className="flex items-center gap-6 w-full">
+                  {/* Icon */}
+                  <div className="flex-shrink-0">
+                    <div
+                      className={`w-16 h-16 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center transform transition-all duration-300 ${
                         index === activeStep
-                          ? "opacity-100 max-h-20"
-                          : "opacity-0 max-h-0"
-                      } overflow-hidden`}
+                          ? "scale-110 shadow-2xl shadow-purple-500/25"
+                          : "scale-100"
+                      }`}
                     >
-                      {step.details}
-                    </p>
+                      <Icon
+                        name={step.icon as any}
+                        size={24}
+                        className="text-white"
+                      />
+                    </div>
                   </div>
-                </div>
 
-                {/* Animated Arrow */}
-                {index < roadmapSteps.length - 1 && (
-                  <div
-                    className={`hidden md:block transition-all duration-300 ${
-                      index < activeStep ? "opacity-100" : "opacity-30"
-                    }`}
-                  >
-                    <Icon
-                      name="ArrowDown"
-                      size={20}
-                      className="text-purple-400"
+                  {/* Content - Full Width */}
+                  <div className="flex-1 min-w-0">
+                    <div className="w-full">
+                      <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 group-hover:bg-clip-text transition-all duration-300">
+                        {step.title}
+                      </h3>
+                      <p className="text-gray-300 mb-4 text-lg md:text-xl leading-relaxed">
+                        {step.description}
+                      </p>
+                      <p
+                        className={`text-base text-gray-400 leading-relaxed transition-all duration-300 ${
+                          index === activeStep
+                            ? "opacity-100 max-h-32"
+                            : "opacity-60 max-h-20"
+                        } overflow-hidden`}
+                      >
+                        {step.details}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Status Indicator */}
+                  <div className="flex-shrink-0">
+                    <div
+                      className={`w-3 h-12 rounded-full transition-all duration-300 ${
+                        index <= activeStep
+                          ? "bg-gradient-to-b from-purple-400 to-cyan-400"
+                          : "bg-gray-600"
+                      }`}
                     />
                   </div>
-                )}
+                </div>
               </div>
             </div>
           ))}
