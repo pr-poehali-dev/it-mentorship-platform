@@ -64,7 +64,7 @@ const PlatformOverview = () => {
           {platformSteps.map((step, index) => (
             <div
               key={index}
-              className={`relative p-8 rounded-2xl border ${step.bgColor} ${step.borderColor} backdrop-blur-sm transition-all duration-500 hover:scale-105 cursor-pointer group`}
+              className={`relative p-8 rounded-2xl border ${step.bgColor} ${step.borderColor} backdrop-blur-sm transition-all duration-500 hover:scale-105 cursor-pointer group h-80`}
               onMouseEnter={() => setHoveredStep(index)}
               onMouseLeave={() => setHoveredStep(null)}
             >
@@ -90,15 +90,17 @@ const PlatformOverview = () => {
                   {step.title}
                 </h3>
                 <p className="text-gray-300 mb-4">{step.description}</p>
-                <p
-                  className={`text-sm text-gray-400 transition-all duration-300 ${
-                    hoveredStep === index
-                      ? "opacity-100 max-h-20"
-                      : "opacity-0 max-h-0"
-                  } overflow-hidden`}
-                >
-                  {step.details}
-                </p>
+
+                {/* Details with absolute positioning */}
+                <div className="relative">
+                  <p
+                    className={`text-sm text-gray-400 transition-opacity duration-300 absolute top-0 left-0 right-0 ${
+                      hoveredStep === index ? "opacity-100" : "opacity-0"
+                    } leading-relaxed px-2`}
+                  >
+                    {step.details}
+                  </p>
+                </div>
               </div>
 
               {/* Connecting Arrow */}
