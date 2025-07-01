@@ -9,7 +9,7 @@ const PlatformOverview = () => {
       icon: "UserPlus",
       title: "Подключение к ментору",
       description: "Выбираете ментора по направлению и опыту",
-      details: "подберем подходящего ментора для твоих целей",
+      details: "Подберем подходящего ментора для твоих целей",
       color: "from-blue-500 to-cyan-500",
       bgColor: "bg-blue-500/10",
       borderColor: "border-blue-500/20",
