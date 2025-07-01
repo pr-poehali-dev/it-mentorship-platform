@@ -46,6 +46,15 @@ const Header = () => {
               <Icon name="UserPlus" size={20} className="mr-2" />
               Стать ментором
             </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white px-8 py-4 text-lg"
+              onClick={() => window.open("https://t.me/pragmat_it", "_blank")}
+            >
+              <Icon name="MessageCircle" size={20} className="mr-2" />
+              Telegram сообщество
+            </Button>
           </div>
 
           <div className="mt-6 p-4 bg-gradient-to-r from-green-900/30 to-emerald-900/30 rounded-lg border border-green-500/30">
