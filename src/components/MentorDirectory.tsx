@@ -192,21 +192,6 @@ const MentorDirectory = () => {
             </div>
           ))}
         </div>
-
-        <div className="text-center mt-12">
-          <div className="bg-gray-900 border border-[#9b87f5]/30 rounded-lg p-6">
-            <Icon
-              name="Lock"
-              size={24}
-              className="text-[#9b87f5] mx-auto mb-3"
-            />
-            <h3 className="font-bold mb-2">Доступ после договора</h3>
-            <p className="text-gray-300 text-sm">
-              Менторы из каталога назначаются индивидуально после заключения
-              договора на менторство
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );
