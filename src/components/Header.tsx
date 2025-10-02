@@ -57,11 +57,16 @@ const Header = () => {
             </Button>
           </div>
 
-          <div className="mt-6 p-4 bg-gradient-to-r from-green-900/30 to-emerald-900/30 rounded-lg border border-green-500/30">
-            <p className="text-green-400 text-lg font-semibold flex items-center justify-center gap-2">Оплата 100% от первого оффера, после трудоустройства</p>
-            <p className="text-green-300 text-sm mt-1">Предоплата от 10 тысяч
-Ежемесячная подписка 5 тысяч
-Больше ничего платить не нужно</p>
+          <div className="mt-6 p-6 bg-gradient-to-r from-green-900/30 to-emerald-900/30 rounded-xl border border-green-500/30">
+            <p className="text-green-400 text-lg font-semibold flex items-center justify-center gap-2 mb-4">Оплата 100% от первого оффера, после трудоустройства</p>
+            <div className="space-y-2">
+              <p className="text-green-300 text-base">
+                <span className="font-semibold">Предоплата от 10 тысяч</span>
+                <span className="text-green-400/70 text-sm ml-2">(Зависит от направления)</span>
+              </p>
+              <p className="text-green-300 text-base font-semibold">Ежемесячная подписка 5 тысяч</p>
+              <p className="text-green-200 text-base font-bold mt-3 pt-3 border-t border-green-500/20">Больше ничего платить не нужно</p>
+            </div>
           </div>
         </div>
       </div>
