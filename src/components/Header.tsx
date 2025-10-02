@@ -58,10 +58,7 @@ const Header = () => {
           </div>
 
           <div className="mt-6 p-4 bg-gradient-to-r from-green-900/30 to-emerald-900/30 rounded-lg border border-green-500/30">
-            <p className="text-green-400 text-lg font-semibold flex items-center justify-center gap-2">
-              <Icon name="CheckCircle" size={20} />
-              Оплата 50% от первого оффера, после трудоустройства
-            </p>
+            <p className="text-green-400 text-lg font-semibold flex items-center justify-center gap-2">Оплата 100% от первого оффера, после трудоустройства</p>
             <p className="text-green-300 text-sm mt-1">
               Больше ничего платить не нужно
             </p>
